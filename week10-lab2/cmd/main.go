@@ -1,13 +1,13 @@
 package main
 
 import (
-	_ "week10-lab2/docs"
-	"week10-lab2/internal/handler"
+    _ "week10-lab2/docs"
+    "week10-lab2/internal/handler"
 
-	"github.com/gin-contrib/cors"
-	"github.com/gin-gonic/gin"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
+    "github.com/gin-gonic/gin"
+    "github.com/gin-contrib/cors"
+    swaggerFiles "github.com/swaggo/files"
+    ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // @title           Simple API Example
@@ -19,8 +19,8 @@ func main() {
 	r := gin.Default()
 
 	config := cors.DefaultConfig()
-	config.AllowAllOrigins = true
-	r.Use(cors.New(config))
+    config.AllowAllOrigins = true
+    r.Use(cors.New(config))
 	// Swagger endpoint
 	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
